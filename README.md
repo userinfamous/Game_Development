@@ -4,3 +4,5 @@ you can create whatever you want inside this repository ranging from story outli
 it was never finish due to difficulties with a script I got from some guy. yeah those were the days.
 
 And well that's about it. 
+
+The red parts are the changes
