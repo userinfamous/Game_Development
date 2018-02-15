@@ -67,5 +67,6 @@ func _physics_process(delta):
 	vel.y = vspd 
 
 	#move using linear velocity only
-	move_and_slide(vel,NORMAL_FORCE)
+	vel = move_and_slide(vel,NORMAL_FORCE)
+	print(vel)
 	pass 

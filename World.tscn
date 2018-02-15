@@ -44,7 +44,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Wall" type="StaticBody2D" parent="." index="1"]
 
 editor/display_folded = true
-position = Vector2( 634.956, 577.56 )
+position = Vector2( 640.345, 577.56 )
 scale = Vector2( 6.9986, 1 )
 input_pickable = false
 collision_layer = 1
@@ -65,36 +65,6 @@ texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" index="1"]
-
-position = Vector2( -0.054441, -0.0572647 )
-scale = Vector2( 3.2, 3.2 )
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Wall2" type="StaticBody2D" parent="." index="2"]
-
-editor/display_folded = true
-position = Vector2( 810.502, 515.039 )
-scale = Vector2( 1.58822, 4.49431 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Wall2" index="0"]
-
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" index="1"]
 
 position = Vector2( -0.054441, -0.0572647 )
 scale = Vector2( 3.2, 3.2 )
