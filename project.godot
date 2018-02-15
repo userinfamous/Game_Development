@@ -10,15 +10,7 @@ config_version=3
 
 [application]
 
-<<<<<<< HEAD
-config/name="Protoype_1"
-=======
-config/name="Protoype_1"
-<<<<<<< better_movement_system
-run/main_scene="res://World.tscn"
-=======
->>>>>>> better_movement_system
-config/icon="res://icon.png"
+
 
 [rendering]
 
