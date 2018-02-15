@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 <<<<<<< HEAD
-config/name="New Game Project"
+config/name="Protoype_1"
 =======
 config/name="Protoype_1"
 <<<<<<< better_movement_system
