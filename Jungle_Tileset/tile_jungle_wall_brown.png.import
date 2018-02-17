@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/tile_jungle_wall_brown.png-0c9414fe5e2a1c4e6c0c1b1a78d559ca.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Jungle_Tileset/tile_jungle_wall_brown.png"
+source_md5="eec7438e976e4a0507b2dd8bea436dd6"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="e98d9bb7134bfbd85e4454221ef47204"
+dest_files=[ "res://.import/tile_jungle_wall_brown.png-0c9414fe5e2a1c4e6c0c1b1a78d559ca.stex" ]
+dest_md5="b44359b9ec24117fd961be8c57164e48"
 
 [params]
 

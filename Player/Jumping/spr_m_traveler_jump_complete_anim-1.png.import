@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/spr_m_traveler_jump_complete_anim-1.png-454333339c1795a5e8fee61642a79c67.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Player/Jumping/spr_m_traveler_jump_complete_anim-1.png"
+source_md5="d2e26fe3476166f61b9f1e3c388bc425"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="e98d9bb7134bfbd85e4454221ef47204"
+dest_files=[ "res://.import/spr_m_traveler_jump_complete_anim-1.png-454333339c1795a5e8fee61642a79c67.stex" ]
+dest_md5="ad0f46ed9b1b725419fcc3d2663a66df"
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/spr_m_traveler_idle_anim-1.png-40027a6aed2edec9a7dfc39ecd869495.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Player/Idle/spr_m_traveler_idle_anim-1.png"
+source_md5="ed949d87a735e62f16450851053b6bb9"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="e98d9bb7134bfbd85e4454221ef47204"
+dest_files=[ "res://.import/spr_m_traveler_idle_anim-1.png-40027a6aed2edec9a7dfc39ecd869495.stex" ]
+dest_md5="0da7e78dd928e2a375e6d7a103140dcc"
 
 [params]
 

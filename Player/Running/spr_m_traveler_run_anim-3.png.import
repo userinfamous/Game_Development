@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/spr_m_traveler_run_anim-3.png-f9800a8bf7ff5921ddbbbcfd128cbc2f.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Player/Running/spr_m_traveler_run_anim-3.png"
+source_md5="4f20838918c8a854b7fa3d083aa9130b"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="e98d9bb7134bfbd85e4454221ef47204"
+dest_files=[ "res://.import/spr_m_traveler_run_anim-3.png-f9800a8bf7ff5921ddbbbcfd128cbc2f.stex" ]
+dest_md5="eb923b3152f441d5aa5bee01517250b7"
 
 [params]
 
