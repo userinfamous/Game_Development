@@ -12,17 +12,19 @@ onready var sprite = get_node("Player_Sprite")
 #initialize constant variable (fixed)
 const JUMPSPEED = 850
 const ACCELERATION = 50
-const FRICTION = 30
+const FRICTION = 40
+const AIR_RESISTANCE = 20
 const MAX_SPEED = 500
 const NORMAL_FORCE = Vector2(0,-1)
-const GRAVITY = 45
+const GRAVITY = 50
 const TERMINAL_VELOCITY = 2500
 
 #initialize all objects
 func _ready():
 	set_physics_process(true)
 	set_process_input(true)
-
+	pass
+	
 #input events
 func _input(event):
 	pass
@@ -51,6 +53,8 @@ func _physics_process(delta):
 		sprite.flip_h = true
 	if not is_on_floor() and vel.y > 0:
 		sprite.animation = "Jump-down"
+		#This adds some air drag. Fixes the issue with dropping too fast
+		vspd -= AIR_RESISTANCE
 	elif vel.y < 0:
 		sprite.animation = "Jump-up"
 	elif vel.y == 0 and vel.x != 0:
