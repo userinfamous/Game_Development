@@ -10,6 +10,7 @@ var input_dir = 0
 onready var sprite = get_node("Player_Sprite")
 
 #initialize constant variable (fixed)
+const AIR_RESISTANCE = 20
 const JUMPSPEED = 850
 const ACCELERATION = 50
 const FRICTION = 30
@@ -51,6 +52,8 @@ func _physics_process(delta):
 		sprite.flip_h = true
 	if not is_on_floor() and vel.y > 0:
 		sprite.animation = "Jump-down"
+		#This fixes the issue where te player falls down too quickly
+		vspd -= AIR_RESISTANCE
 	elif vel.y < 0:
 		sprite.animation = "Jump-up"
 	elif vel.y == 0 and vel.x != 0:

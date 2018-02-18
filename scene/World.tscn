@@ -8,6 +8,7 @@
 [ext_resource path="res://Player/Idle/spr_m_traveler_idle_anim-5.png" type="Texture" id=6]
 [ext_resource path="res://Player/Idle/spr_m_traveler_idle_anim-6.png" type="Texture" id=7]
 [ext_resource path="res://Player/Idle/spr_m_traveler_idle_anim-7.png" type="Texture" id=8]
+<<<<<<< HEAD
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-0.png" type="Texture" id=9]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-1.png" type="Texture" id=10]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-11.png" type="Texture" id=11]
@@ -34,6 +35,34 @@
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-7.png" type="Texture" id=32]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-8.png" type="Texture" id=33]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-9.png" type="Texture" id=34]
+=======
+[ext_resource path="res://Player/Running/spr_m_traveler_run_anim-0.png" type="Texture" id=9]
+[ext_resource path="res://Player/Running/spr_m_traveler_run_anim-1.png" type="Texture" id=10]
+[ext_resource path="res://Player/Running/spr_m_traveler_run_anim-2.png" type="Texture" id=11]
+[ext_resource path="res://Player/Running/spr_m_traveler_run_anim-3.png" type="Texture" id=12]
+[ext_resource path="res://Player/Running/spr_m_traveler_run_anim-4.png" type="Texture" id=13]
+[ext_resource path="res://Player/Running/spr_m_traveler_run_anim-5.png" type="Texture" id=14]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-10.png" type="Texture" id=15]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-2.png" type="Texture" id=16]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-3.png" type="Texture" id=17]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-4.png" type="Texture" id=18]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-5.png" type="Texture" id=19]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-6.png" type="Texture" id=20]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-7.png" type="Texture" id=21]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-8.png" type="Texture" id=22]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-9.png" type="Texture" id=23]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-0.png" type="Texture" id=24]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-1.png" type="Texture" id=25]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-11.png" type="Texture" id=26]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-12.png" type="Texture" id=27]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-13.png" type="Texture" id=28]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-14.png" type="Texture" id=29]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-15.png" type="Texture" id=30]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-16.png" type="Texture" id=31]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-17.png" type="Texture" id=32]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-18.png" type="Texture" id=33]
+[ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-19.png" type="Texture" id=34]
+>>>>>>> 7fa877b97e6929e0ad1306f6074ac824168b3ca5
 [ext_resource path="res://JungleDirtTileset.tres" type="TileSet" id=35]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -44,6 +73,7 @@ animations = [ {
 "name": "Idle",
 "speed": 7.0
 }, {
+<<<<<<< HEAD
 "frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Pre-Jump",
@@ -55,11 +85,33 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ) ],
+=======
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Running",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "Jump-mid",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+>>>>>>> 7fa877b97e6929e0ad1306f6074ac824168b3ca5
+"loop": true,
+"name": "Jump-up",
+"speed": 5.0
+}, {
+<<<<<<< HEAD
 "frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+=======
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Pre-Jump",
+"speed": 0.5
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+>>>>>>> 7fa877b97e6929e0ad1306f6074ac824168b3ca5
 "loop": true,
 "name": "Running",
 "speed": 10.0
@@ -93,7 +145,11 @@ __meta__ = {
 [node name="Player_Sprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
 
 frames = SubResource( 1 )
+<<<<<<< HEAD
 animation = "Jump-up"
+=======
+animation = "Pre-Jump"
+>>>>>>> 7fa877b97e6929e0ad1306f6074ac824168b3ca5
 frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
