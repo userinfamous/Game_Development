@@ -11,6 +11,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-0.png" type="Texture" id=9]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-1.png" type="Texture" id=10]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-11.png" type="Texture" id=11]
@@ -58,6 +59,8 @@
 =======
 =======
 >>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
+=======
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-2.png" type="Texture" id=9]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-3.png" type="Texture" id=10]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-4.png" type="Texture" id=11]
@@ -76,7 +79,10 @@
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-1.png" type="Texture" id=24]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-10.png" type="Texture" id=25]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of d3b31d1... Merge-Values-Changed
+=======
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 =======
 >>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-11.png" type="Texture" id=26]
@@ -105,10 +111,14 @@ animations = [ {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 =======
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 >>>>>>> parent of d3b31d1... Merge-Values-Changed
+=======
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 =======
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 >>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
@@ -117,6 +127,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 "loop": true,
 "name": "Running",
@@ -128,15 +139,21 @@ animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 =======
 >>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
+=======
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 "loop": true,
 "name": "Running",
 "speed": 10.0
 }, {
 <<<<<<< HEAD
+<<<<<<< HEAD
 "frames": [ ExtResource( 15 ) ],
 =======
 "frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 >>>>>>> parent of d3b31d1... Merge-Values-Changed
+=======
+"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 =======
 "frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 >>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
@@ -146,8 +163,12 @@ animations = [ {
 }, {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 >>>>>>> 7fa877b97e6929e0ad1306f6074ac824168b3ca5
+=======
+"frames": [ ExtResource( 25 ) ],
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 =======
 "frames": [ ExtResource( 25 ) ],
 >>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
@@ -155,6 +176,7 @@ animations = [ {
 "name": "Jump-mid",
 "speed": 5.0
 }, {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 "frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
@@ -175,6 +197,8 @@ animations = [ {
 "name": "Jump-mid",
 "speed": 5.0
 }, {
+=======
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
 "loop": true,
 "name": "Jump-down",
@@ -206,6 +230,7 @@ __meta__ = {
 frames = SubResource( 1 )
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 animation = "Jump-up"
 <<<<<<< HEAD
 =======
@@ -215,6 +240,10 @@ frame = 1
 =======
 frame = 6
 >>>>>>> parent of d3b31d1... Merge-Values-Changed
+=======
+animation = "Jump-up"
+frame = 6
+>>>>>>> parent of 7fa877b... Fixed the issue where the player falls down too quickly
 =======
 animation = "Jump-up"
 frame = 6
