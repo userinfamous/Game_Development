@@ -13,10 +13,10 @@ onready var sprite = get_node("Player_Sprite")
 const AIR_RESISTANCE = 20
 const JUMPSPEED = 850
 const ACCELERATION = 50
-const FRICTION = 30
+const FRICTION = 40
 const MAX_SPEED = 500
 const NORMAL_FORCE = Vector2(0,-1)
-const GRAVITY = 45
+const GRAVITY = 50
 const TERMINAL_VELOCITY = 2500
 
 #initialize all objects
@@ -61,6 +61,8 @@ func _physics_process(delta):
 	else:
 		sprite.animation = "Idle"
 	
+
+
 	#activate hspd if there's input
 	if input_dir != 0:
 		hspd += ACCELERATION
@@ -85,7 +87,7 @@ func _physics_process(delta):
 	
 	#Inertia for sudden turning
 	if input_dir == -dir:
-		hspd = 0
+		hspd /= 10
 	
 	#Horizontal motion for the x component and vertical for y
 	vel.x = hspd * dir
