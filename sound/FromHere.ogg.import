@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FromHere.ogg-103237777054f6c691dc2d16d97a6810.oggstr"
+
+[deps]
+
+source_file="res://sound/FromHere.ogg"
+source_md5="ba66f43a9b03d2cfe03a5cad67a975ae"
+
+dest_files=[ "res://.import/FromHere.ogg-103237777054f6c691dc2d16d97a6810.oggstr" ]
+dest_md5="a93b84b30f7622a132656133df4fd6a6"
+
+[params]
+
+loop=true
+loop_offset=0
