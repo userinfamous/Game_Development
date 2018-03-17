@@ -12,6 +12,7 @@ config_version=3
 
 config/name="Protoype_1"
 run/main_scene="res://scene/Level1.tscn"
+
 config/icon="res://icon.png"
 config/stretch/aspect="keep"
 config/size/fullscreen=false

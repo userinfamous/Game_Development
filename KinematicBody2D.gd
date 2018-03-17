@@ -11,6 +11,7 @@ onready var sprite = get_node("Player_Sprite")
 onready var wallLeft_signal = get_node("wallLeft_signal")
 onready var wallRight_signal = get_node("wallRight_signal")
 
+
 #initialize constant variable (fixed)
 const JUMPSPEED = 850
 const ACCELERATION = 50
@@ -27,7 +28,8 @@ func _ready():
 	set_physics_process(true)
 	set_process_input(true)
 	pass
-	
+
+
 #input events
 func _input(event):
 	pass
@@ -64,7 +66,7 @@ func _physics_process(delta):
 		sprite.animation = "Running"
 	else:
 		sprite.animation = "Idle"
-	
+
 	#activate hspd if there's input
 	if input_dir != 0:
 		hspd += ACCELERATION
@@ -94,7 +96,9 @@ func _physics_process(delta):
 	if (wallLeft_signal.is_colliding() or wallRight_signal.is_colliding()) and Input.is_action_just_pressed("ui_up"):
 		sprite.flip_h = -dir
 		vspd = -JUMPSPEED
-		
+	elif is_on_ceiling():
+		vspd = GRAVITY
+	
 	#Inertia for sudden turning
 	if input_dir == -dir:
 		hspd = 0
