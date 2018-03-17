@@ -8,6 +8,8 @@ var input_dir = 0
 
 #access sprite
 onready var sprite = get_node("Player_Sprite")
+onready var wallLeft_signal = get_node("wallLeft_signal")
+onready var wallRight_signal = get_node("wallRight_signal")
 
 #initialize constant variable (fixed)
 const JUMPSPEED = 850
@@ -18,6 +20,7 @@ const MAX_SPEED = 500
 const NORMAL_FORCE = Vector2(0,-1)
 const GRAVITY = 50
 const TERMINAL_VELOCITY = 2500
+const LOW_JUMPSPEED = 400
 
 #initialize all objects
 func _ready():
@@ -47,9 +50,9 @@ func _physics_process(delta):
 		input_dir = 0
 
 	#animate the player
-	if input_dir == 1:
+	if input_dir == 1 and vspd >= 0:
 		sprite.flip_h = false
-	elif input_dir == -1:
+	elif input_dir == -1 and vspd >= 0:
 		sprite.flip_h = true
 	if not is_on_floor() and vel.y > 0:
 		sprite.animation = "Jump-down"
@@ -81,9 +84,17 @@ func _physics_process(delta):
 	#jump is the player is on floor, if there's a ceiling repulse the player
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
 		vspd = -JUMPSPEED
+	if Input.is_action_just_released("ui_up"):
+		if vspd < -LOW_JUMPSPEED:
+			vspd = -LOW_JUMPSPEED
 	elif is_on_ceiling():
 		vspd = GRAVITY
 	
+	#if jump on wall
+	if (wallLeft_signal.is_colliding() or wallRight_signal.is_colliding()) and Input.is_action_just_pressed("ui_up"):
+		sprite.flip_h = -dir
+		vspd = -JUMPSPEED
+		
 	#Inertia for sudden turning
 	if input_dir == -dir:
 		hspd = 0
