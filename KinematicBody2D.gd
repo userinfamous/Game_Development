@@ -20,6 +20,7 @@ const AIR_RESISTANCE = 20
 const MAX_SPEED = 500
 const NORMAL_FORCE = Vector2(0,-1)
 const GRAVITY = 50
+const WALL_SLIDE = 25
 const TERMINAL_VELOCITY = 2500
 const LOW_JUMPSPEED = 400
 
@@ -75,6 +76,7 @@ func _physics_process(delta):
 
 	#max speed, as well as constant acceleration on player
 	hspd = clamp(hspd,0,MAX_SPEED)
+
 	#don't want the player to constantly accelerate even on floor
 	if not is_on_floor():
 		vspd += GRAVITY
@@ -83,22 +85,12 @@ func _physics_process(delta):
 	if vspd >= TERMINAL_VELOCITY:
 		vspd = TERMINAL_VELOCITY
 
-	#jump is the player is on floor, if there's a ceiling repulse the player
+	#jump is the player is on floor, if there's a ceiling, apply newton's third law
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
 		vspd = -JUMPSPEED
-	if Input.is_action_just_released("ui_up"):
-		if vspd < -LOW_JUMPSPEED:
-			vspd = -LOW_JUMPSPEED
 	elif is_on_ceiling():
 		vspd = GRAVITY
-	
-	#if jump on wall
-	if (wallLeft_signal.is_colliding() or wallRight_signal.is_colliding()) and Input.is_action_just_pressed("ui_up"):
-		sprite.flip_h = -dir
-		vspd = -JUMPSPEED
-	elif is_on_ceiling():
-		vspd = GRAVITY
-	
+
 	#Inertia for sudden turning
 	if input_dir == -dir:
 		hspd = 0

@@ -34,7 +34,8 @@
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-17.png" type="Texture" id=32]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-18.png" type="Texture" id=33]
 [ext_resource path="res://Player/Jumping/spr_m_traveler_jump_complete_anim-19.png" type="Texture" id=34]
-[ext_resource path="res://JungleDirtTileset.tres" type="TileSet" id=35]
+[ext_resource path="res://Tilesets/JungleDirtTileset.tres" type="TileSet" id=35]
+
 
 [sub_resource type="SpriteFrames" id=1]
 

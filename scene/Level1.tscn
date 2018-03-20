@@ -1,19 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects_Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://JungleDirtTileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Objects_Scenes/Level_Progression.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects_Scenes/Level_Progression.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tilesets/Dirt_Autotileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Tilesets/JungleDirtTileset.tres" type="TileSet" id=4]
 
-[node name="Level1" type="Node"]
+[node name="Level1" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 384, 128 )
 
-[node name="Jungle_Tileset" type="TileMap" parent="." index="1"]
+[node name="Level_Progression" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1376, 224 )
+change_level = "res://scene/Level2.tscn"
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65546, 0, 5, 131080, 0, 196608, 131081, 0, 196609, 131082, 0, 131083, 131083, 0, 196609, 131084, 0, 196610, 196608, 0, 1, 196609, 0, 65536, 196610, 0, 65536, 196611, 0, 65536, 196612, 0, 65536, 196613, 0, 65536, 196614, 0, 2, 196618, 0, 65541, 262144, 0, 131073, 262145, 0, 196619, 262146, 0, 196619, 262147, 0, 196619, 262148, 0, 196619, 262149, 0, 196619, 262150, 0, 65539, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 262154, 0, 131082, 262155, 0, 65536, 262156, 0, 2, 262158, 0, 196608, 262159, 0, 196609, 262160, 0, 131076, 262161, 0, 196609, 262162, 0, 196609, 262163, 0, 196609, 262164, 0, 10, 262165, 0, 2, 327680, 0, 131073, 327681, 0, 196619, 327682, 0, 196619, 327683, 0, 196619, 327684, 0, 196619, 327685, 0, 196619, 327686, 0, 196619, 327687, 0, 196619, 327688, 0, 196619, 327689, 0, 196619, 327690, 0, 196619, 327691, 0, 196619, 327692, 0, 131074, 327696, 0, 65541, 327700, 0, 131073, 327701, 0, 131074, 393216, 0, 65537, 393217, 0, 131072, 393218, 0, 131072, 393219, 0, 131072, 393220, 0, 131072, 393221, 0, 131072, 393222, 0, 131072, 393223, 0, 131072, 393224, 0, 131072, 393225, 0, 131072, 393226, 0, 131072, 393227, 0, 131072, 393228, 0, 65547, 393229, 0, 196609, 393230, 0, 196609, 393231, 0, 196609, 393232, 0, 196611, 393233, 0, 196609, 393234, 0, 196609, 393235, 0, 196609, 393236, 0, 65544, 393237, 0, 65538 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap2" type="TileMap" parent="." index="3"]
+
+mode = 0
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -28,15 +58,24 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 327690, 0, 0, 327691, 9, 0, 327692, 10, 0, 327693, 2, 0, 393226, 28, 0, 393227, 24, 0, 393228, 25, 0, 393229, 29, 0, 458763, 22, 0, 458764, 23, 0, 458774, 6, 0, 458775, 8, 0, 524299, 26, 0, 524300, 27, 0, 524310, 30, 0, 524311, 39, 0, 589846, 30, 0, 589847, 39, 0, 655382, 30, 0, 655383, 39, 0, 720918, 44, 0, 720919, 45, 0, 786448, 0, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 2, 0, 851984, 14, 0, 851985, 15, 0, 851986, 15, 0, 851987, 15, 0, 851988, 15, 0, 851989, 15, 0, 851990, 15, 0, 851991, 16, 0, 983050, 11, 0, 983051, 4, 0, 983052, 5, 0, 983053, 13, 0, 1048586, 536870951, 0, 1048587, 17, 0, 1048588, 17, 0, 1048589, 39, 0, 1114122, 536870951, 0, 1114123, 17, 0, 1114124, 17, 0, 1114125, 39, 0, 1179658, 536870951, 0, 1179659, 17, 0, 1179660, 17, 0, 1179661, 39, 0, 1245194, 536870951, 0, 1245195, 17, 0, 1245196, 17, 0, 1245197, 39, 0, 1310730, 536870951, 0, 1310731, 17, 0, 1310732, 17, 0, 1310733, 39, 0, 1376266, 42, 0, 1376267, 17, 0, 1376268, 17, 0, 1376269, 43, 0, 1441802, 52, 0, 1441803, 17, 0, 1441804, 17, 0, 1441805, 53, 0, 1507338, 52, 0, 1507339, 17, 0, 1507340, 17, 0, 1507341, 53, 0 )
-_sections_unfolded = [ "Transform" ]
+tile_data = PoolIntArray( 131092, 0, 0, 131093, 2, 0, 262160, 0, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 2, 0, 393216, 0, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 2, 0 )
+_sections_unfolded = [ "Cell" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Level_Progression" parent="." index="2" instance=ExtResource( 3 )]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="4"]
 
-position = Vector2( 736, 192 )
-change_level = "res://scene/Level2.tscn"
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
 
 
