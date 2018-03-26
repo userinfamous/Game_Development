@@ -12,7 +12,6 @@ config_version=3
 
 config/name="Protoype_1"
 run/main_scene="res://scene/Level1.tscn"
-
 config/icon="res://icon.png"
 config/stretch/aspect="keep"
 config/size/fullscreen=false
@@ -21,6 +20,7 @@ config/size/fullscreen=false
 
 window/size/width=1366
 window/size/height=768
+window/size/resizable=false
 window/stretch/aspect="keep"
 
 [input]
@@ -43,5 +43,5 @@ ui_down=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 quality/filters/use_nearest_mipmap_filter=true
-environment/default_environment="res://default_env.tres"

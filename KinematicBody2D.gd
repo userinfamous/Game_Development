@@ -37,6 +37,10 @@ func _input(event):
 
 	
 func _physics_process(delta):
+	#wall jump
+	var on_wallLeft = wallLeft_signal.is_colliding()
+	var on_wallRight = wallRight_signal.is_colliding()
+	
 	#conditions, store previous dir for inertia in opposite direction as well as making so that it wouldn't stop immediately
 	#see vel.y for more context. As Oppose to just input.dir the 
 	if input_dir != 0:
@@ -51,20 +55,25 @@ func _physics_process(delta):
 		input_dir = 0
 	else:
 		input_dir = 0
-
-	#animate the player
+	#Animate the player
+	#walking right
 	if input_dir == 1 and vspd >= 0:
 		sprite.flip_h = false
+	#walking left
 	elif input_dir == -1 and vspd >= 0:
 		sprite.flip_h = true
+	#jumping down
 	if not is_on_floor() and vel.y > 0:
 		sprite.animation = "Jump-down"
 		#This adds some air drag. Fixes the issue with dropping too fast
 		vspd -= AIR_RESISTANCE
+	#jumping up
 	elif vel.y < 0:
 		sprite.animation = "Jump-up"
+	#running
 	elif vel.y == 0 and vel.x != 0:
 		sprite.animation = "Running"
+	#idle
 	else:
 		sprite.animation = "Idle"
 
@@ -94,6 +103,13 @@ func _physics_process(delta):
 	#Inertia for sudden turning
 	if input_dir == -dir:
 		hspd = 0
+	
+	if on_wallLeft and not is_on_floor():
+		vel.x = -hspd
+		vspd = -JUMPSPEED
+	elif on_wallRight and not is_on_floor():
+		vel.x = -hspd
+		vspd = -JUMPSPEED
 	
 	#Horizontal motion for the x component and vertical for y
 	vel.x = hspd * dir
