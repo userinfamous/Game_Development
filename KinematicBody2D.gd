@@ -5,6 +5,7 @@ var vspd = 0
 var hspd = 0
 var dir = 0
 var input_dir = 0
+var wall_jump = false
 
 #access sprite
 onready var sprite = get_node("Player_Sprite")
@@ -37,7 +38,11 @@ func _input(event):
 
 	
 func _physics_process(delta):
-	#wall jump
+	#layer of abstractions
+	var walk_right = Input.is_action_pressed("ui_right")
+	var walk_left = Input.is_action_pressed("ui_left")
+	var jump_up = Input.is_action_just_pressed("ui_up")
+	#raycast's variables
 	var on_wallLeft = wallLeft_signal.is_colliding()
 	var on_wallRight = wallRight_signal.is_colliding()
 	
@@ -47,14 +52,15 @@ func _physics_process(delta):
 		dir = input_dir
 	
 	#Input direction
-	if Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+	if walk_right and not walk_left:
 		input_dir = 1 
-	elif Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+	elif walk_left and not walk_right:
 		input_dir = -1
-	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"): 
+	elif walk_right and walk_left: 
 		input_dir = 0
 	else:
 		input_dir = 0
+		
 	#Animate the player
 	#walking right
 	if input_dir == 1 and vspd >= 0:
@@ -62,6 +68,7 @@ func _physics_process(delta):
 	#walking left
 	elif input_dir == -1 and vspd >= 0:
 		sprite.flip_h = true
+
 	#jumping down
 	if not is_on_floor() and vel.y > 0:
 		sprite.animation = "Jump-down"
@@ -89,13 +96,16 @@ func _physics_process(delta):
 	#don't want the player to constantly accelerate even on floor
 	if not is_on_floor():
 		vspd += GRAVITY
-
+	else:
+		wall_jump = false
+		
+		
 	#Terminal Velocity reached
 	if vspd >= TERMINAL_VELOCITY:
 		vspd = TERMINAL_VELOCITY
 
 	#jump is the player is on floor, if there's a ceiling, apply newton's third law
-	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
+	if is_on_floor() and jump_up:
 		vspd = -JUMPSPEED
 	elif is_on_ceiling():
 		vspd = GRAVITY
@@ -104,15 +114,16 @@ func _physics_process(delta):
 	if input_dir == -dir:
 		hspd = 0
 	
-	if on_wallLeft and not is_on_floor():
-		vel.x = -hspd
+	#checks if player is colliding with a wall
+	if (on_wallLeft || on_wallRight) and jump_up and not is_on_floor():
+		wall_jump = true
 		vspd = -JUMPSPEED
-	elif on_wallRight and not is_on_floor():
-		vel.x = -hspd
-		vspd = -JUMPSPEED
-	
+		
 	#Horizontal motion for the x component and vertical for y
-	vel.x = hspd * dir
+	if wall_jump:
+		vel.x = JUMPSPEED/3 * -dir
+	else:
+		vel.x = hspd * dir
 	vel.y = vspd 
 
 	#move using linear velocity only
