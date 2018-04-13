@@ -5,13 +5,14 @@ var vspd = 0
 var hspd = 0
 var dir = 0
 var input_dir = 0
+#flags
 var wall_jump = false
 var can_play = true
+var fullscreen_mode = false
 #access sprite
 onready var sprite = get_node("Player_Sprite")
 onready var wallLeft_signal = get_node("wallLeft_signal")
 onready var wallRight_signal = get_node("wallRight_signal")
-
 #initialize constant variable (fixed)
 const JUMPSPEED = 850
 const ACCELERATION = 50
@@ -42,7 +43,9 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var jump_up = Input.is_action_just_pressed("ui_up")
 	var jump_released = Input.is_action_just_released("ui_up")
-
+	var escape = Input.is_action_just_pressed("ui_escape")
+	var restart = Input.is_action_just_pressed("ui_restart")
+	var fullscreen = Input.is_action_just_pressed("ui_fullscreen")
 	#raycast's variables
 	var on_wallLeft = wallLeft_signal.is_colliding()
 	var on_wallRight = wallRight_signal.is_colliding()
@@ -51,6 +54,7 @@ func _physics_process(delta):
 	#see vel.y for more context. As Oppose to just input.dir the 
 	if input_dir != 0:
 		dir = input_dir
+
 	#if player is not in air or is wall jumping
 	if can_play:
 		#Input direction
@@ -94,14 +98,13 @@ func _physics_process(delta):
 	
 	#max speed, as well as constant acceleration on player
 	hspd = clamp(hspd,0,MAX_SPEED)
-
+	
 	#don't want the player to constantly accelerate even on floor
 	if not is_on_floor():
 		vspd += GRAVITY
 	else:
 		wall_jump = false
 		can_play = true
-		
 		
 	#Terminal Velocity reached
 	if vspd >= TERMINAL_VELOCITY:
@@ -123,7 +126,7 @@ func _physics_process(delta):
 	
 	#checks if player is colliding with a wall
 	if (on_wallLeft || on_wallRight) and jump_up and not is_on_floor():
-
+		#if it is flagged
 		if wall_jump:
 			#propels the player up
 			vspd = -JUMPSPEED
@@ -146,6 +149,19 @@ func _physics_process(delta):
 	else:
 		#by default
 		vel.x = hspd * dir
+	#if player presses ESC
+	if escape:
+		get_tree().quit()
+	#if player presses R
+	if restart:
+		get_tree().reload_current_scene()
+	#if player played Ctrl-F
+	if fullscreen and (fullscreen_mode==false): 
+		fullscreen_mode = true
+		OS.set_window_fullscreen(true)
+	elif fullscreen and (fullscreen_mode==true):
+		fullscreen_mode = false
+		OS.set_window_fullscreen(false)
 		
 	#proceed with wall jump
 	vel.y = vspd 
