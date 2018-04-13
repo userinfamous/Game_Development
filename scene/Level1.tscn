@@ -9,7 +9,7 @@
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 384, 128 )
+position = Vector2( 192, -128 )
 
 [node name="Level_Progression" parent="." index="1" instance=ExtResource( 2 )]
 

@@ -6,12 +6,11 @@ var hspd = 0
 var dir = 0
 var input_dir = 0
 var wall_jump = false
-
+var can_play = true
 #access sprite
 onready var sprite = get_node("Player_Sprite")
 onready var wallLeft_signal = get_node("wallLeft_signal")
 onready var wallRight_signal = get_node("wallRight_signal")
-
 
 #initialize constant variable (fixed)
 const JUMPSPEED = 850
@@ -24,6 +23,7 @@ const GRAVITY = 50
 const WALL_SLIDE = 25
 const TERMINAL_VELOCITY = 2500
 const LOW_JUMPSPEED = 400
+const WALL_JUMP_SPEED = 280
 
 #initialize all objects
 func _ready():
@@ -31,17 +31,18 @@ func _ready():
 	set_process_input(true)
 	pass
 
-
 #input events
 func _input(event):
+	
 	pass
-
 	
 func _physics_process(delta):
 	#layer of abstractions
 	var walk_right = Input.is_action_pressed("ui_right")
 	var walk_left = Input.is_action_pressed("ui_left")
 	var jump_up = Input.is_action_just_pressed("ui_up")
+	var jump_released = Input.is_action_just_released("ui_up")
+
 	#raycast's variables
 	var on_wallLeft = wallLeft_signal.is_colliding()
 	var on_wallRight = wallRight_signal.is_colliding()
@@ -50,16 +51,17 @@ func _physics_process(delta):
 	#see vel.y for more context. As Oppose to just input.dir the 
 	if input_dir != 0:
 		dir = input_dir
-	
-	#Input direction
-	if walk_right and not walk_left:
-		input_dir = 1 
-	elif walk_left and not walk_right:
-		input_dir = -1
-	elif walk_right and walk_left: 
-		input_dir = 0
-	else:
-		input_dir = 0
+	#if player is not in air or is wall jumping
+	if can_play:
+		#Input direction
+		if walk_right and not walk_left:
+			input_dir = 1 
+		elif walk_left and not walk_right:
+			input_dir = -1
+		elif walk_right and walk_left: 
+			input_dir = 0
+		else:
+			input_dir = 0
 		
 	#Animate the player
 	#walking right
@@ -83,13 +85,13 @@ func _physics_process(delta):
 	#idle
 	else:
 		sprite.animation = "Idle"
-
+	
 	#activate hspd if there's input
 	if input_dir != 0:
 		hspd += ACCELERATION
 	else:
 		hspd -= FRICTION 
-
+	
 	#max speed, as well as constant acceleration on player
 	hspd = clamp(hspd,0,MAX_SPEED)
 
@@ -98,6 +100,7 @@ func _physics_process(delta):
 		vspd += GRAVITY
 	else:
 		wall_jump = false
+		can_play = true
 		
 		
 	#Terminal Velocity reached
@@ -109,23 +112,43 @@ func _physics_process(delta):
 		vspd = -JUMPSPEED
 	elif is_on_ceiling():
 		vspd = GRAVITY
-
+	#limits the player jump to a minimum
+	if jump_released:
+		if vspd < -LOW_JUMPSPEED:
+			vspd = -LOW_JUMPSPEED
+			
 	#Inertia for sudden turning
 	if input_dir == -dir:
 		hspd = 0
 	
 	#checks if player is colliding with a wall
 	if (on_wallLeft || on_wallRight) and jump_up and not is_on_floor():
+
+		if wall_jump:
+			#propels the player up
+			vspd = -JUMPSPEED
+		#trigger flag
 		wall_jump = true
-		vspd = -JUMPSPEED
-		
+		#remove control from player
+		can_play = false
+		#change direciont
+		dir = -dir
+
 	#Horizontal motion for the x component and vertical for y
 	if wall_jump:
-		vel.x = JUMPSPEED/3 * -dir
+		hspd = 0
+		input_dir = dir
+		vel.x = WALL_JUMP_SPEED * -dir
+		#this is the equivalent switch statement in gdscript
+		match -dir:
+			-1: sprite.flip_h = true
+			1: sprite.flip_h = false
 	else:
+		#by default
 		vel.x = hspd * dir
+		
+	#proceed with wall jump
 	vel.y = vspd 
-
 	#move using linear velocity only
 	vel = move_and_slide(vel,NORMAL_FORCE)
 	pass 
