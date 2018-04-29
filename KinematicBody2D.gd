@@ -43,9 +43,7 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var jump_up = Input.is_action_just_pressed("ui_up")
 	var jump_released = Input.is_action_just_released("ui_up")
-	var escape = Input.is_action_just_pressed("ui_escape")
-	var restart = Input.is_action_just_pressed("ui_restart")
-	var fullscreen = Input.is_action_just_pressed("ui_fullscreen")
+
 	#raycast's variables
 	var on_wallLeft = wallLeft_signal.is_colliding()
 	var on_wallRight = wallRight_signal.is_colliding()
@@ -149,6 +147,23 @@ func _physics_process(delta):
 	else:
 		#by default
 		vel.x = hspd * dir
+	#keybind/command script
+	_game_commands()
+	#proceed with wall jump
+	vel.y = vspd 
+	#move using linear velocity only
+	vel = move_and_slide(vel,NORMAL_FORCE)
+	pass 
+	
+	
+	
+	
+#game commands
+func _game_commands():
+	#game command variables
+	var escape = Input.is_action_just_pressed("ui_escape")
+	var restart = Input.is_action_just_pressed("ui_restart")
+	var fullscreen = Input.is_action_just_pressed("ui_fullscreen")
 	#if player presses ESC
 	if escape:
 		get_tree().quit()
@@ -162,9 +177,4 @@ func _physics_process(delta):
 	elif fullscreen and (fullscreen_mode==true):
 		fullscreen_mode = false
 		OS.set_window_fullscreen(false)
-		
-	#proceed with wall jump
-	vel.y = vspd 
-	#move using linear velocity only
-	vel = move_and_slide(vel,NORMAL_FORCE)
-	pass 
+	pass
