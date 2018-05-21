@@ -28,8 +28,6 @@ extents = Vector2( 16, 16 )
 
 [node name="Floor_Tiles" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="floor1" type="Sprite" parent="Floor_Tiles" index="0"]
 
 editor/display_folded = true
@@ -437,6 +435,8 @@ shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Edge_TIles" type="Node" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="edge1" type="Sprite" parent="Edge_TIles" index="0"]
 

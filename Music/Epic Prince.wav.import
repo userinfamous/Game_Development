@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Epic Prince.wav-b0fbd600efcc7ef7e592e4a7ccd9f697.sample"
+
+[deps]
+
+source_file="res://Music/Epic Prince.wav"
+source_md5="387e4b9333cfd6cddea178731f181eff"
+
+dest_files=[ "res://.import/Epic Prince.wav-b0fbd600efcc7ef7e592e4a7ccd9f697.sample" ]
+dest_md5="9e426bbbeb9ba9b96ebdfdc090d54c42"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
