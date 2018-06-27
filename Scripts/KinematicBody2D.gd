@@ -9,15 +9,20 @@ var input_dir = 0
 var wall_jump = false
 var can_play = true
 var fullscreen_mode = false
+var play_once = false
 #access sprite
 onready var sprite = get_node("Player_Sprite")
 onready var wallLeft_signal = get_node("wallLeft_signal")
 onready var wallRight_signal = get_node("wallRight_signal")
+
+#walking sound
+onready var landing_sound = get_node("sound/landing")
+
 #initialize constant variable (fixed)
 const JUMPSPEED = 850
 const ACCELERATION = 50
 const FRICTION = 40
-const AIR_RESISTANCE = 20
+const AIR_RESISTANCE = 10
 const MAX_SPEED = 500
 const NORMAL_FORCE = Vector2(0,-1)
 const GRAVITY = 50
@@ -76,8 +81,6 @@ func _physics_process(delta):
 	#jumping down
 	if not is_on_floor() and vel.y > 0:
 		sprite.animation = "Jump-down"
-		#This adds some air drag. Fixes the issue with dropping too fast
-		vspd -= AIR_RESISTANCE
 	#jumping up
 	elif vel.y < 0:
 		sprite.animation = "Jump-up"
@@ -100,7 +103,16 @@ func _physics_process(delta):
 	#don't want the player to constantly accelerate even on floor
 	if not is_on_floor():
 		vspd += GRAVITY
+		#This adds some air drag. Fixes the issue with dropping too fast
+		vspd -= AIR_RESISTANCE
+		
+		#flag
+		play_once = false
 	else:
+		if !landing_sound.playing and play_once == false:
+			landing_sound.play()
+			play_once = true
+			
 		wall_jump = false
 		can_play = true
 		
