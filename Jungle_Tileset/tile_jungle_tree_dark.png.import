@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/tile_jungle_tree_dark.png-851ec65fd77c3fae2b36b839b07342fd.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Jungle_Tileset/tile_jungle_tree_dark.png"
-source_md5="b89a1a740d7386b9fe94044175410ff9"
-
 dest_files=[ "res://.import/tile_jungle_tree_dark.png-851ec65fd77c3fae2b36b839b07342fd.stex" ]
-dest_md5="7773c0fe0dcebf1fca3c49d8e2cd3739"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

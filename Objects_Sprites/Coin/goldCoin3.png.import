@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/goldCoin3.png-dbd5822d9f43c2c5e375c7c8bdb77a3a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Objects_Sprites/Coin/goldCoin3.png"
-source_md5="8a9f075339346316652794cd279d5a42"
-
 dest_files=[ "res://.import/goldCoin3.png-dbd5822d9f43c2c5e375c7c8bdb77a3a.stex" ]
-dest_md5="b5d18cc3b8158f0ff7db4afb8be04afa"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

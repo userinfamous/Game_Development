@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/tile_jungle_bottom_water.png-db04f8ff7dd954a6a0a30993bc9fd1f1.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Jungle_Tileset/tile_jungle_bottom_water.png"
-source_md5="803dcde6d6e9f6611e593049e4633a68"
-
 dest_files=[ "res://.import/tile_jungle_bottom_water.png-db04f8ff7dd954a6a0a30993bc9fd1f1.stex" ]
-dest_md5="378f2e857394f3044c0be1665b320495"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

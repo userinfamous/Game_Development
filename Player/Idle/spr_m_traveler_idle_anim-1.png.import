@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/spr_m_traveler_idle_anim-1.png-40027a6aed2edec9a7dfc39ecd869495.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Player/Idle/spr_m_traveler_idle_anim-1.png"
-source_md5="ed949d87a735e62f16450851053b6bb9"
-
 dest_files=[ "res://.import/spr_m_traveler_idle_anim-1.png-40027a6aed2edec9a7dfc39ecd869495.stex" ]
-dest_md5="0da7e78dd928e2a375e6d7a103140dcc"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

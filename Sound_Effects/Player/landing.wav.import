@@ -7,10 +7,7 @@ path="res://.import/landing.wav-3d824c26d53ec7057dc1fab6928e73f1.sample"
 [deps]
 
 source_file="res://Sound_Effects/Player/landing.wav"
-source_md5="76111807544db0012cd30baf4b040b5d"
-
 dest_files=[ "res://.import/landing.wav-3d824c26d53ec7057dc1fab6928e73f1.sample" ]
-dest_md5="f8bbe31b327efad30c990991ff467450"
 
 [params]
 

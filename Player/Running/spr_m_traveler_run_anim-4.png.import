@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/spr_m_traveler_run_anim-4.png-7a3f485bf518dd8bfc6ff0a885dd80e9.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Player/Running/spr_m_traveler_run_anim-4.png"
-source_md5="0f176f40c19c57a47712b1d22632a7c0"
-
 dest_files=[ "res://.import/spr_m_traveler_run_anim-4.png-7a3f485bf518dd8bfc6ff0a885dd80e9.stex" ]
-dest_md5="dc41c410b282b1b447b173c1a8de4cc7"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

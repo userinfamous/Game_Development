@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/spr_m_traveler_jump_complete_anim-10.png-69daf3e017a46c5bcb0b8df70d232725.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Player/Jumping/spr_m_traveler_jump_complete_anim-10.png"
-source_md5="225c71c8babe3ac6bbdffa07f025d327"
-
 dest_files=[ "res://.import/spr_m_traveler_jump_complete_anim-10.png-69daf3e017a46c5bcb0b8df70d232725.stex" ]
-dest_md5="0d58f2eaa1d1b33411cbf2895e248133"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
