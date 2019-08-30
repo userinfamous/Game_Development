@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Protoype_1"
-run/main_scene="res://Scenes/Start_Menu.tscn"
+run/main_scene="res://game/Start_Menu.tscn"
 config/icon="res://icon.png"
 config/stretch/aspect="keep"
 config/size/fullscreen=true

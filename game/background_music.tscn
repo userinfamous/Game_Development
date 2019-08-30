@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://background_music.gd" type="Script" id=1]
+
+[node name="background_music" type="AudioStreamPlayer2D" index="0"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+script = ExtResource( 1 )
+change_music = null
+
+
